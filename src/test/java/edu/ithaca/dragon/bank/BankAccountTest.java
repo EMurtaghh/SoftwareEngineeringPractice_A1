@@ -15,6 +15,9 @@ class BankAccountTest {
 
     @Test
     void withdrawTest() {
+        /**
+         * Tests should
+         */
         BankAccount bankAccount = new BankAccount("a@b.com", 200);
         bankAccount.withdraw(100);
 
@@ -24,12 +27,13 @@ class BankAccountTest {
     @Test
     void isEmailValidTest(){
         /**
-         * Valid email address has at least an @, a '.' and text.
+         * Valid email address has at least an @, a '.' and text. @ before '.', and neither can be last in email.
          */
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
         assertFalse( BankAccount.isEmailValid(""));
         assertFalse(BankAccount.isEmailValid("abc@com"));
         assertFalse(BankAccount.isEmailValid("abc.com@"));
+        assertFalse(BankAccount.isEmailValid("abc@com."));
         assertFalse(BankAccount.isEmailValid("abc.com"));
     }
 
