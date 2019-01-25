@@ -23,8 +23,14 @@ class BankAccountTest {
 
     @Test
     void isEmailValidTest(){
+        /**
+         * Valid email address has at least an @, a '.' and text.
+         */
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
         assertFalse( BankAccount.isEmailValid(""));
+        assertFalse(BankAccount.isEmailValid("abc@com"));
+        assertFalse(BankAccount.isEmailValid("abc.com@"));
+        assertFalse(BankAccount.isEmailValid("abc.com"));
     }
 
     @Test
