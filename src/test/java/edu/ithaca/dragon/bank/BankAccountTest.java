@@ -11,6 +11,9 @@ class BankAccountTest {
         BankAccount bankAccount = new BankAccount("a@b.com", 200);
 
         assertEquals(200, bankAccount.getBalance());
+        assertNotEquals(0,bankAccount.getBalance());
+        assertNotEquals(-10,bankAccount.getBalance());
+        assertNotEquals(400,bankAccount.getBalance());
     }
 
     @Test
