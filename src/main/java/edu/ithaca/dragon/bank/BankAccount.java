@@ -39,8 +39,15 @@ public class BankAccount {
         /**
          * Takes a double to determine if amount is valid
          *  Returns true if amount has 2 decimal places, returns false if doesnt
+         *  0.00, the '.' is at 3rd position from back of string
          */
-        return false;
+        String amtStr= Double.toString(amount);
+        if(amtStr.indexOf('.')!=amtStr.length()-3){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     public static boolean isEmailValid(String email){
